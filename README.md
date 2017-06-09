@@ -1,7 +1,8 @@
 # raspi-MCP3201
 
 This module provides functions to read the MCP3201 (2.7V 12-Bit A/D Converter with SPI Serial Interface).
-please refer to the datasheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf
+
+Please refer to the datasheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf
 
 The MSB is clocked out on the falling edge of the 3rd clock pulse. After the first eight clocks have been sent
 to the device, the MCU receive buffer will contain two unknown bits (??), the null bit (NB), and the highest order five bits (B11-B7) of the conversion. After the second eight clocks have been sent, the receive buffer will contain the lowest order seven bits (B6-B0) and the B1 bit repeated as the A/D converter has begun to shift out LSB data with the extra (i.e. the 16th) clock.
