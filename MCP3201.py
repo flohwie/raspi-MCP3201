@@ -23,6 +23,7 @@ class MCP3201(object):
             raise ValueError('wrong CE-setting: {0} setting (use 0 for CE0 or 1 for CE1)!'.format(CE_PIN))
         self._spi = spidev.SpiDev()
         self._spi.open(SPI_BUS, CE_PIN)
+        self._spi.max_speed_hz = 976000
         pass
 
     def readADC_MSB(self):
